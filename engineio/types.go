@@ -5,7 +5,7 @@ import (
 )
 
 // CheckerFunc is function to check request.
-type CheckerFunc func(*http.Request) (http.Header, error)
+type CheckerFunc func(*http.Request) (*http.Request, error)
 
 // ConnInitorFunc is function to do after create connection.
 type ConnInitorFunc func(*http.Request, Conn)

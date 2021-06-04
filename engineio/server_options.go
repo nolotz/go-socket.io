@@ -1,13 +1,13 @@
 package engineio
 
 import (
-	"github.com/googollee/go-socket.io/engineio/session"
+	"github.com/nolotz/go-socket.io/engineio/session"
 	"net/http"
 	"time"
 
-	"github.com/googollee/go-socket.io/engineio/transport"
-	"github.com/googollee/go-socket.io/engineio/transport/polling"
-	"github.com/googollee/go-socket.io/engineio/transport/websocket"
+	"github.com/nolotz/go-socket.io/engineio/transport"
+	"github.com/nolotz/go-socket.io/engineio/transport/polling"
+	"github.com/nolotz/go-socket.io/engineio/transport/websocket"
 )
 
 // Options is options to create a server.
@@ -67,8 +67,8 @@ func (c *Options) getSessionIDGenerator() session.IDGenerator {
 	return &session.DefaultIDGenerator{}
 }
 
-func defaultChecker(*http.Request) (http.Header, error) {
-	return nil, nil
+func defaultChecker(req *http.Request) (*http.Request, error) {
+	return req, nil
 }
 
 func defaultInitor(*http.Request, Conn) {}

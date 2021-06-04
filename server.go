@@ -5,7 +5,7 @@ import (
 
 	"github.com/gomodule/redigo/redis"
 
-	"github.com/googollee/go-socket.io/engineio"
+	"github.com/nolotz/go-socket.io/engineio"
 )
 
 // Server is a go-socket.io server.

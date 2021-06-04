@@ -11,8 +11,8 @@ import (
 
 	"github.com/gorilla/websocket"
 
-	"github.com/googollee/go-socket.io/engineio/session"
-	"github.com/googollee/go-socket.io/engineio/transport"
+	"github.com/nolotz/go-socket.io/engineio/session"
+	"github.com/nolotz/go-socket.io/engineio/transport"
 )
 
 // Server is instance of server
@@ -79,14 +79,10 @@ func (s *Server) ServeHTTP(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
-	header, err := s.requestChecker(r)
+	r, err := s.requestChecker(r)
 	if err != nil {
 		http.Error(w, err.Error(), http.StatusBadGateway)
 		return
-	}
-
-	for k, v := range header {
-		w.Header()[k] = v
 	}
 
 	if reqSession == nil {

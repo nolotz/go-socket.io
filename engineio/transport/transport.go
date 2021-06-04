@@ -7,8 +7,8 @@ import (
 	"net/url"
 	"time"
 
-	"github.com/googollee/go-socket.io/engineio/frame"
-	"github.com/googollee/go-socket.io/engineio/packet"
+	"github.com/nolotz/go-socket.io/engineio/frame"
+	"github.com/nolotz/go-socket.io/engineio/packet"
 )
 
 // FrameReader reads a frame. It need be closed before next reading.
